@@ -51,6 +51,11 @@
     <script>
         const text = document.getElementById('clickable-text');
 
+        // Ensure the 'animate' class is removed on page load
+        window.addEventListener('load', () => {
+            text.classList.remove('animate');
+        });
+
         text.addEventListener('click', () => {
             text.classList.add('animate');
             setTimeout(() => {
@@ -60,3 +65,4 @@
     </script>
 </body>
 </html>
+
