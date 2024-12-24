@@ -31,10 +31,32 @@
             letter-spacing: 2px;
             font-family: 'Helvetica Neue', sans-serif;
             text-align: center;
+            cursor: pointer;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        h1:hover {
+            color: #fff;
+        }
+
+        h1.animate {
+            opacity: 0;
+            transform: scale(0.8);
         }
     </style>
 </head>
 <body>
-    <h1>Abhinav Purohit</h1>
+    <h1 id="clickable-text">Abhinav Purohit</h1>
+
+    <script>
+        const text = document.getElementById('clickable-text');
+
+        text.addEventListener('click', () => {
+            text.classList.add('animate');
+            setTimeout(() => {
+                window.location.href = 'https://x.com/abhinavpurohit_';
+            }, 800); // Matches the duration of the CSS transition
+        });
+    </script>
 </body>
 </html>
